@@ -19,11 +19,11 @@
 		FA7D23B6277E0C1A0075113F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D23B5277E0C1A0075113F /* Images.swift */; };
 		FA7D23BE277E0C6D0075113F /* DeemRectangularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D23BD277E0C6D0075113F /* DeemRectangularButton.swift */; };
 		FA7D23C4277E0E2E0075113F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA7D23C3277E0E2E0075113F /* SnapKit */; };
+		FA7D23D3277E111E0075113F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D23D2277E111E0075113F /* Strings.swift */; };
 		FA9CE4C9277E081F002ECD36 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4C8277E081F002ECD36 /* MainViewModel.swift */; };
 		FA9CE4CE277E082C002ECD36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4CD277E082C002ECD36 /* MainViewController.swift */; };
 		FA9CE4D3277E0835002ECD36 /* MainVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4D2277E0835002ECD36 /* MainVCFactory.swift */; };
 		FA9CE4D9277E08D5002ECD36 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4D8277E08D5002ECD36 /* VC.swift */; };
-		FA9CE4E5277E08E9002ECD36 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4E4277E08E9002ECD36 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,11 +61,11 @@
 		FA7D23AC277E0B6B0075113F /* DeemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeemImageView.swift; sourceTree = "<group>"; };
 		FA7D23B5277E0C1A0075113F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		FA7D23BD277E0C6D0075113F /* DeemRectangularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeemRectangularButton.swift; sourceTree = "<group>"; };
+		FA7D23D2277E111E0075113F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FA9CE4C8277E081F002ECD36 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FA9CE4CD277E082C002ECD36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA9CE4D2277E0835002ECD36 /* MainVCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCFactory.swift; sourceTree = "<group>"; };
 		FA9CE4D8277E08D5002ECD36 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
-		FA9CE4E4277E08E9002ECD36 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,7 @@
 				FA6A2FC82779ED51001414BA /* SlideemTests */,
 				FA6A2FD32779ED52001414BA /* SlideemUITests */,
 				FA6A2FB02779ED47001414BA /* Products */,
+				FA7D23C8277E0EFB0075113F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,8 +163,16 @@
 			isa = PBXGroup;
 			children = (
 				FA7D23B5277E0C1A0075113F /* Images.swift */,
+				FA7D23D2277E111E0075113F /* Strings.swift */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		FA7D23C8277E0EFB0075113F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FA9CE4C6277E080A002ECD36 /* Main */ = {
@@ -197,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				FA9CE4D8277E08D5002ECD36 /* VC.swift */,
-				FA9CE4E4277E08E9002ECD36 /* NavigationController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -339,7 +347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9CE4D3277E0835002ECD36 /* MainVCFactory.swift in Sources */,
-				FA9CE4E5277E08E9002ECD36 /* NavigationController.swift in Sources */,
 				FA7D23BE277E0C6D0075113F /* DeemRectangularButton.swift in Sources */,
 				FA6A2FB72779ED47001414BA /* ViewController.swift in Sources */,
 				FA6A2FB32779ED47001414BA /* AppDelegate.swift in Sources */,
@@ -348,6 +355,7 @@
 				FA9CE4CE277E082C002ECD36 /* MainViewController.swift in Sources */,
 				FA7D23B6277E0C1A0075113F /* Images.swift in Sources */,
 				FA9CE4D9277E08D5002ECD36 /* VC.swift in Sources */,
+				FA7D23D3277E111E0075113F /* Strings.swift in Sources */,
 				FA7D23AD277E0B6B0075113F /* DeemImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

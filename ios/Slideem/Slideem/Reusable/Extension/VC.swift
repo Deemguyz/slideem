@@ -11,4 +11,12 @@ extension UIViewController {
     public func setWhiteBackground() {
         self.view.backgroundColor = .white
     }
+    
+    public func hideNavBar() {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    public func showNavBar() {
+        self.navigationController?.navigationBar.isHidden = false
+    }
 }
