@@ -77,6 +77,7 @@ class MainViewController: UIViewController {
     }
     
     private func setButtons() {
+        self.startButton.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
         self.helpButton.addTarget(self, action: #selector(helpButtonPressed), for: .touchUpInside)
     }
 }
@@ -84,5 +85,9 @@ class MainViewController: UIViewController {
 extension MainViewController {
     @objc private func helpButtonPressed() {
         // TODO: Open help view
+    }
+    
+    @objc private func startButtonPressed() {
+        // TODO: Open scan view
     }
 }
