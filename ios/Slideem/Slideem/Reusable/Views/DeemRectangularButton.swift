@@ -24,6 +24,8 @@ final class DeemRectangularButton: UIButton {
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
         self.titleLabel?.font = titleFont
+        self.titleLabel?.numberOfLines = 0
+        self.titleLabel?.textAlignment = .center
         guard let image = image else { return }
         self.setImage(with: image)
     }

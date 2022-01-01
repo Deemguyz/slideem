@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     
     private lazy var startButton = DeemRectangularButton(color: .clear, cornerRadius: 10, title: Strings.Main.startButton, titleColor: .white, titleFont: .systemFont(ofSize: 30), image: Images.Main.startButton)
     
+    private lazy var helpButton = DeemRectangularButton(color: .clear, cornerRadius: 0, title: Strings.Main.helpButton, titleColor: .white, titleFont: .italicSystemFont(ofSize: 14), frame: .zero, image: nil)
+    
     private let viewModel: MainViewModel
     
     // MARK: - LifeCycle
@@ -38,6 +40,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setButtons()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +58,7 @@ class MainViewController: UIViewController {
             make.leading.equalToSuperview().inset(43)
             make.trailing.equalToSuperview().inset(4)
         }
+        
         self.view.addSubview(startButton)
         startButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -62,5 +66,23 @@ class MainViewController: UIViewController {
             make.width.equalTo(240)
             make.bottom.equalTo(self.view.snp.bottom).inset(215)
         }
+        
+        self.view.addSubview(helpButton)
+        helpButton.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(50)
+            make.height.equalTo(32)
+            make.width.equalTo(150)
+        }
+    }
+    
+    private func setButtons() {
+        self.helpButton.addTarget(self, action: #selector(helpButtonPressed), for: .touchUpInside)
+    }
+}
+
+extension MainViewController {
+    @objc private func helpButtonPressed() {
+        // TODO: Open help view
     }
 }
