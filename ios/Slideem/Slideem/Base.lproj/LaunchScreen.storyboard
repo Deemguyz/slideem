@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Slideem" translatesAutoresizingMaskIntoConstraints="NO" id="6WV-4h-JyU">
+                                <rect key="frame" x="62" y="398" width="290" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="FrG-kk-Tlr"/>
+                                    <constraint firstAttribute="height" constant="100" id="zqV-Uh-Myt"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="DeemLogo" translatesAutoresizingMaskIntoConstraints="NO" id="tVL-Th-aW7">
+                                <rect key="frame" x="132" y="703" width="150" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="7bZ-hA-Ih4"/>
+                                    <constraint firstAttribute="width" constant="150" id="fFZ-bU-2ci"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.20392156862745098" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tVL-Th-aW7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Xw-uO-8db"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tVL-Th-aW7" secondAttribute="bottom" constant="69" id="NZQ-vo-iEg"/>
+                            <constraint firstItem="6WV-4h-JyU" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="sbu-4k-nV8"/>
+                            <constraint firstItem="6WV-4h-JyU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zSE-YQ-DGI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="DeemLogo" width="150" height="89"/>
+        <image name="Slideem" width="146.5" height="58"/>
+    </resources>
+</document>
