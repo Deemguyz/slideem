@@ -11,7 +11,8 @@ function App() {
     QRCode.toDataURL(session_id.toString() ).then(setSrc)
   }, []);
   return (
-    <img src={src} />
+    <div> </div>
+    //<img src={src} />
 
   );
 }

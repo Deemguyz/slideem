@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import ImageHolder from './components/ImageHolder';
+import DragDrop from './components/DragDrop.js';
+//Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+// Images
+import AppLogo from './app_logo.svg'; // Tell webpack this JS file uses this image
+import DeemLogo from './deem_logo.png'; // Tell webpack this JS file uses this image
 ReactDOM.render(
   <React.StrictMode>
+    <ImageHolder imagePath={AppLogo} cssStyle='TopHolder' text=''/>
+    <DragDrop />
     <App />
+    <ImageHolder imagePath={DeemLogo} cssStyle='BottomHolder' text='Made by'/>
   </React.StrictMode>,
   document.getElementById('root')
 );

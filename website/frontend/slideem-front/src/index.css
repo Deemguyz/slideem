@@ -5,8 +5,80 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#22343C;
+}
+.TopHolder{
+  display: flex;
+  justify-content: center;
+
+
+}
+.TopHolder img{
+  height: auto;
+  width:100%;
+}
+.BottomHolder{
+  color:white;
+  font-weight:bold;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+
+}
+.BottomHolder img{
+  height: auto;
+  width:35%;
+}
+row{
+  text-align: center;
+  width:15%;
+
+}
+.dragdrop-container{
+  width: 100%;
+}
+.accepted{
+  background-color:#30444E;
+  box-shadow: 10px 5px 5px black;
+  margin:auto;
+  margin-top:1%;
+  width:30%;
+  color: gold;
+}
+.btn{
+  color:white;
+  float: right;
+
+}
+.dragdrop{
+
+  color:white;
+  background-color:#30444E;
+  box-shadow: 10px 5px 5px black;
+
+  padding-top: 185px;
+  padding-bottom: 185px;
+  width:30%;
+  margin:auto;
+
+  display: flex;
+  justify-content: center;
+  /* bring your own prefixes */
+
+}
+.fcc-btn {
+  background-color: #199319;
+  color: white;
+  padding: 15px 25px;
+  box-shadow: 2px 2px 2px black;
+  text-decoration: none;
 }
 
+.fcc-btn:hover {
+  background-color: #223094;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
