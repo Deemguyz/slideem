@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ImageHolder from './components/ImageHolder';
-import DragDrop from './components/DragDrop.js';
+import DragDrop from './components/DragDrop';
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -13,7 +13,7 @@ import DeemLogo from './deem_logo.png'; // Tell webpack this JS file uses this i
 ReactDOM.render(
   <React.StrictMode>
     <ImageHolder imagePath={AppLogo} cssStyle='TopHolder' text=''/>
-    <DragDrop />
+     <DragDrop />
     <App />
     <ImageHolder imagePath={DeemLogo} cssStyle='BottomHolder' text='Made by'/>
   </React.StrictMode>,

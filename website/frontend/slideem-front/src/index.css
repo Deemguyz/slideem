@@ -68,6 +68,18 @@ row{
   /* bring your own prefixes */
 
 }
+.qr-container{
+  margin: auto;
+  margin-top:8%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+.qr-container img{
+  height: 250px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px black;
+}
 .fcc-btn {
   background-color: #199319;
   color: white;
