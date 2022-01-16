@@ -6,17 +6,13 @@ function QRComponent() {
   // Generate QR
   useEffect(() => {
       // GET request using fetch inside useEffect React hook
-      fetch('https://slideem-backend.herokuapp.com/token/generate', {mode: 'no-cors',   })
-          .then(response => response.json())
-          .then(data => console.log(data));
-
+      fetch('https://slideem-backend.herokuapp.com/token/generate')
+          .then(response => response.text())
+          .then(data => QRCode.toDataURL(data.toString()))
+          .then(setSrc)
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, []);
-  const session_id = Date.now();
-  console.log(session_id)
-  useEffect(() => {
-    QRCode.toDataURL(session_id.toString() ).then(setSrc)
-  }, []);
+
   return (
     <div className='qr-container'>
     <img src={src} />

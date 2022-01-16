@@ -8,7 +8,6 @@ import QRComponent from './QRComponent';
 
 const DragDrop = () => {
   const [acceptedFileItems, setFiles] = useState([]);
-  const [srcImg, setSrc] = useState('');
   const [acceptedFile, setFile] = useState(null);
   const onDrop = useCallback(acceptedFiles => {
     // Do something with the files
@@ -16,7 +15,7 @@ const DragDrop = () => {
   }, [])
   const onConfirm = () => {
      const img = document.getElementById( 'img' );
-    console.log(acceptedFileItems)
+
     acceptedFileItems.forEach((file) => {
       const reader = new FileReader()
       reader.onabort = () => console.log('file reading was aborted')
@@ -31,7 +30,7 @@ const DragDrop = () => {
     setFiles([])
 
   }
-  
+
 
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop, accept:'.pdf', maxFiles:1})
 
@@ -55,16 +54,22 @@ const DragDrop = () => {
     }
     // Accept
     <div className='accepted'>
-      <h4>Accepted file</h4>
-      <ul>{ acceptedFileItems.map(file => (
-          <li key={file.path}>
-            {file.path} - {file.size} bytes
-          </li>
-        ))}</ul>
-        {acceptedFileItems && <Button text='Confirm' color='green' onClick={onConfirm}/>}
-        <img id='img' />
+    {acceptedFile !== null ?
+      <h4>Scan QR code...</h4>
+      :
+      <div>
+        <h4>Accepted file</h4>
+        <ul>{ acceptedFileItems.map(file => (
+            <li key={file.path}>
+              {file.path} - {file.size} bytes
+            </li>
+          ))}</ul>
+          {acceptedFileItems && <Button text='Confirm' color='green' onClick={onConfirm}/>}
 
+        </div>
+    }
     </div>
+
 </div>
 
   )
