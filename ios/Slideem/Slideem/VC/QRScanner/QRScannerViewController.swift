@@ -10,11 +10,16 @@ import UIKit
 import AVFoundation
 
 class QRScannerViewController: UIViewController {
+    
+    // MARK: - Components
+    
     private var captureSession: AVCaptureSession
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     private var qrCodeFrameView: UIView?
 
     private let viewModel: QRScannerViewModel
+    
+    // MARK: - Life cycle
     
     init(viewModel: QRScannerViewModel) {
         self.viewModel = viewModel
@@ -26,12 +31,24 @@ class QRScannerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        super.loadView()
+        
+        self.view.backgroundColor = .white
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.configureCamera()
         self.setQRCodeFrame()
     }
+    
+    private func setDelegates() {
+        self.viewModel.delegate = self
+    }
+    
+    // MARK: - set qr related stuff
     
     private func configureCamera() {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
@@ -99,5 +116,12 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 print("qr value is: \(qrValue)")
             }
         }
+    }
+}
+
+extension QRScannerViewController: QRScannerViewModelDelegate {
+    func moveToJoystick() {
+        // TODO: add navigating to joystick module
+        
     }
 }
