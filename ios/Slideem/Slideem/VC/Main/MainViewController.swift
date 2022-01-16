@@ -89,5 +89,7 @@ extension MainViewController {
     
     @objc private func startButtonPressed() {
         // TODO: Open scan view
+        let vc = QRScannerVCFactory.make()
+        self.present(vc, animated: true, completion: nil)
     }
 }
