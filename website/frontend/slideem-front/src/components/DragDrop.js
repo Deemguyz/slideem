@@ -38,7 +38,7 @@ const DragDrop = () => {
   return (
 <div className="dragdrop-container">
     {acceptedFile !== null ?
-      <QRComponent />
+      <QRComponent PDF_document = {acceptedFile}/>
       // <PdfDisplay PDF_document = {acceptedFile}/>
       :
     // Drag & Drop component
@@ -55,7 +55,7 @@ const DragDrop = () => {
     // Accept
     <div className='accepted'>
     {acceptedFile !== null ?
-      <h4>Scan QR code...</h4>
+      <h4 id='message'>Scan QR code...</h4>
       :
       <div>
         <h4>Accepted file</h4>
