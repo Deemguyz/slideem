@@ -12,4 +12,9 @@ public struct Strings {
         static let startButton: String = "Start"
         static let helpButton: String = "Terms & Conditions\nHelp"
     }
+    
+    public struct Help {
+        static let title: String = "Help"
+        static let description: String = "1. Upload your presentation file on the website\n 2. Scan the QR code on the mobile app\n 3. Use mobile app to switch pages"
+    }
 }

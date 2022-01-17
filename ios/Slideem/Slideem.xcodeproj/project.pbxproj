@@ -24,6 +24,8 @@
 		FA9CE4CE277E082C002ECD36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4CD277E082C002ECD36 /* MainViewController.swift */; };
 		FA9CE4D3277E0835002ECD36 /* MainVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4D2277E0835002ECD36 /* MainVCFactory.swift */; };
 		FA9CE4D9277E08D5002ECD36 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4D8277E08D5002ECD36 /* VC.swift */; };
+		FAF484952794130D005DF758 /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF484942794130D005DF758 /* HelpPageViewController.swift */; };
+		FAF4849A279413C8005DF758 /* DeemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF48499279413C8005DF758 /* DeemLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		FA9CE4CD277E082C002ECD36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA9CE4D2277E0835002ECD36 /* MainVCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCFactory.swift; sourceTree = "<group>"; };
 		FA9CE4D8277E08D5002ECD36 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		FAF484942794130D005DF758 /* HelpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
+		FAF48499279413C8005DF758 /* DeemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeemLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 			children = (
 				FA7D23AC277E0B6B0075113F /* DeemImageView.swift */,
 				FA7D23BD277E0C6D0075113F /* DeemRectangularButton.swift */,
+				FAF48499279413C8005DF758 /* DeemLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 		FA9CE4C7277E0811002ECD36 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				FAF48493279412FA005DF758 /* HelpPage */,
 				FA9CE4C6277E080A002ECD36 /* Main */,
 			);
 			path = VC;
@@ -208,6 +214,14 @@
 				FA9CE4D8277E08D5002ECD36 /* VC.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAF48493279412FA005DF758 /* HelpPage */ = {
+			isa = PBXGroup;
+			children = (
+				FAF484942794130D005DF758 /* HelpPageViewController.swift */,
+			);
+			path = HelpPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF484952794130D005DF758 /* HelpPageViewController.swift in Sources */,
 				FA9CE4D3277E0835002ECD36 /* MainVCFactory.swift in Sources */,
 				FA7D23BE277E0C6D0075113F /* DeemRectangularButton.swift in Sources */,
 				FA6A2FB72779ED47001414BA /* ViewController.swift in Sources */,
@@ -353,6 +368,7 @@
 				FA6A2FB52779ED47001414BA /* SceneDelegate.swift in Sources */,
 				FA9CE4C9277E081F002ECD36 /* MainViewModel.swift in Sources */,
 				FA9CE4CE277E082C002ECD36 /* MainViewController.swift in Sources */,
+				FAF4849A279413C8005DF758 /* DeemLabel.swift in Sources */,
 				FA7D23B6277E0C1A0075113F /* Images.swift in Sources */,
 				FA9CE4D9277E08D5002ECD36 /* VC.swift in Sources */,
 				FA7D23D3277E111E0075113F /* Strings.swift in Sources */,
