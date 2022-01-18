@@ -24,6 +24,12 @@
 		FA9CE4CE277E082C002ECD36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4CD277E082C002ECD36 /* MainViewController.swift */; };
 		FA9CE4D3277E0835002ECD36 /* MainVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4D2277E0835002ECD36 /* MainVCFactory.swift */; };
 		FA9CE4D9277E08D5002ECD36 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE4D8277E08D5002ECD36 /* VC.swift */; };
+		FAA382E32796F77800A959AB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA382E22796F77800A959AB /* Colors.swift */; };
+		FAA382E82796F88800A959AB /* HelpPageVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA382E72796F88800A959AB /* HelpPageVCFactory.swift */; };
+		FAA382ED2796FA2B00A959AB /* DeemNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA382EC2796FA2B00A959AB /* DeemNavBar.swift */; };
+		FAA382F32797000600A959AB /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA382F22797000600A959AB /* DeviceHelper.swift */; };
+		FAF484952794130D005DF758 /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF484942794130D005DF758 /* HelpPageViewController.swift */; };
+		FAF4849A279413C8005DF758 /* DeemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF48499279413C8005DF758 /* DeemLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,12 @@
 		FA9CE4CD277E082C002ECD36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA9CE4D2277E0835002ECD36 /* MainVCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCFactory.swift; sourceTree = "<group>"; };
 		FA9CE4D8277E08D5002ECD36 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		FAA382E22796F77800A959AB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FAA382E72796F88800A959AB /* HelpPageVCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageVCFactory.swift; sourceTree = "<group>"; };
+		FAA382EC2796FA2B00A959AB /* DeemNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeemNavBar.swift; sourceTree = "<group>"; };
+		FAA382F22797000600A959AB /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		FAF484942794130D005DF758 /* HelpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
+		FAF48499279413C8005DF758 /* DeemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeemLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +130,7 @@
 		FA6A2FB12779ED47001414BA /* Slideem */ = {
 			isa = PBXGroup;
 			children = (
+				FAA382F12796FFF700A959AB /* Helpers */,
 				FA7D23B4277E0C110075113F /* Assets */,
 				FA9CE4D7277E08C5002ECD36 /* Reusable */,
 				FA9CE4C7277E0811002ECD36 /* VC */,
@@ -153,8 +166,8 @@
 		FA7D23AB277E0B550075113F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA7D23AC277E0B6B0075113F /* DeemImageView.swift */,
-				FA7D23BD277E0C6D0075113F /* DeemRectangularButton.swift */,
+				FAA382F72797011200A959AB /* UIKitViews */,
+				FAA382EC2796FA2B00A959AB /* DeemNavBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 			children = (
 				FA7D23B5277E0C1A0075113F /* Images.swift */,
 				FA7D23D2277E111E0075113F /* Strings.swift */,
+				FAA382E22796F77800A959AB /* Colors.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 		FA9CE4C7277E0811002ECD36 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				FAF48493279412FA005DF758 /* HelpPage */,
 				FA9CE4C6277E080A002ECD36 /* Main */,
 			);
 			path = VC;
@@ -208,6 +223,33 @@
 				FA9CE4D8277E08D5002ECD36 /* VC.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAA382F12796FFF700A959AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FAA382F22797000600A959AB /* DeviceHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FAA382F72797011200A959AB /* UIKitViews */ = {
+			isa = PBXGroup;
+			children = (
+				FA7D23AC277E0B6B0075113F /* DeemImageView.swift */,
+				FA7D23BD277E0C6D0075113F /* DeemRectangularButton.swift */,
+				FAF48499279413C8005DF758 /* DeemLabel.swift */,
+			);
+			path = UIKitViews;
+			sourceTree = "<group>";
+		};
+		FAF48493279412FA005DF758 /* HelpPage */ = {
+			isa = PBXGroup;
+			children = (
+				FAF484942794130D005DF758 /* HelpPageViewController.swift */,
+				FAA382E72796F88800A959AB /* HelpPageVCFactory.swift */,
+			);
+			path = HelpPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,14 +388,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA382ED2796FA2B00A959AB /* DeemNavBar.swift in Sources */,
+				FAF484952794130D005DF758 /* HelpPageViewController.swift in Sources */,
 				FA9CE4D3277E0835002ECD36 /* MainVCFactory.swift in Sources */,
 				FA7D23BE277E0C6D0075113F /* DeemRectangularButton.swift in Sources */,
+				FAA382E82796F88800A959AB /* HelpPageVCFactory.swift in Sources */,
+				FAA382E32796F77800A959AB /* Colors.swift in Sources */,
 				FA6A2FB72779ED47001414BA /* ViewController.swift in Sources */,
 				FA6A2FB32779ED47001414BA /* AppDelegate.swift in Sources */,
 				FA6A2FB52779ED47001414BA /* SceneDelegate.swift in Sources */,
 				FA9CE4C9277E081F002ECD36 /* MainViewModel.swift in Sources */,
 				FA9CE4CE277E082C002ECD36 /* MainViewController.swift in Sources */,
+				FAF4849A279413C8005DF758 /* DeemLabel.swift in Sources */,
 				FA7D23B6277E0C1A0075113F /* Images.swift in Sources */,
+				FAA382F32797000600A959AB /* DeviceHelper.swift in Sources */,
 				FA9CE4D9277E08D5002ECD36 /* VC.swift in Sources */,
 				FA7D23D3277E111E0075113F /* Strings.swift in Sources */,
 				FA7D23AD277E0B6B0075113F /* DeemImageView.swift in Sources */,
@@ -535,6 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XF4TTRXY2Z;
 				INFOPLIST_FILE = Slideem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,7 +591,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deem.Slideem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -554,6 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XF4TTRXY2Z;
 				INFOPLIST_FILE = Slideem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,7 +611,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deem.Slideem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
