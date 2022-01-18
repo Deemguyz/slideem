@@ -6,27 +6,32 @@
 //
 
 import UIKit
+import SnapKit
 
 class HelpPageViewController: UIViewController {
     
-    private lazy var descriptionLabel = DeemLabel(text: Strings.Help.description, textColor: <#T##UIColor#>, textFont: <#T##UIFont#>)
+    // MARK: - Components
     
-    override func loadView() {
-        super.loadView()
-        
-        self.setUI()
-    }
+    private lazy var descriptionLabel = DeemLabel(text: Strings.Help.description, textColor: DeemColors.textColor, textFont: .boldSystemFont(ofSize: 16))
+   
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUI()
     }
+    
+    // MARK: - UI
     
     private func setUI() {
-        self.setNavBar()
+        self.view.backgroundColor = DeemColors.vcColor
         
-    }
-    
-    private func setNavBar() {
-        self.navigationController?.title = Strings.Help.title
+        self.setNav(with: Strings.Help.title)
+        
+        self.view.addSubview(descriptionLabel)
+        descriptionLabel.snp.makeConstraints { (make) in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalToSuperview().inset(topOffset)
+        }
     }
 }
