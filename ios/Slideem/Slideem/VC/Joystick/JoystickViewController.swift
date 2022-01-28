@@ -51,6 +51,8 @@ class JoystickViewController: UIViewController {
     private func setViews() {
         self.view.backgroundColor = #colorLiteral(red: 0.1333333333, green: 0.2039215686, blue: 0.2352941176, alpha: 1)
         
+        self.setNav(with: "My cool title")
+        
         self.createHVButtons()
         
         self.view.addSubview(self.buttonsHV)
