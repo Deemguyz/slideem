@@ -33,7 +33,7 @@ final class MoveButton: UIButton {
     private func setViews(title: String) {
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 30)
-        self.setTitleColor(.black, for: .normal)
+        self.setTitleColor(.white, for: .normal)
     }
     
     // MARK: - selection/unselection
@@ -72,6 +72,8 @@ final class JoystickCenterButton: UIButton {
         self.setTitle("0", for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 80)
         self.titleLabel?.textColor = #colorLiteral(red: 0.5882352941, green: 0.6549019608, blue: 0.6862745098, alpha: 1)
+        
+        self.setShadow()
     }
     
     private func setShadow() {
@@ -79,6 +81,6 @@ final class JoystickCenterButton: UIButton {
         self.layer.shadowOffset = .zero
         self.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.layer.masksToBounds = false
-        self.layer.shadowOpacity = 0.6
+        self.layer.shadowOpacity = 1.5
     }
 }
