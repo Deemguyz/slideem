@@ -69,7 +69,6 @@ class JoystickViewController: UIViewController {
     private func createHVButtons() {
         let views: [UIView] = [self.previousButton, self.nextButton]
         self.buttonsHV = UIStackView(arrangedSubviews: views)
-//        self.buttonsHV.frame = CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 50)
         self.buttonsHV.axis = .horizontal
         self.buttonsHV.distribution = .equalSpacing
     }
@@ -80,6 +79,7 @@ class JoystickViewController: UIViewController {
 }
 
 // MARK: - Joystick functions
+
 extension JoystickViewController {
     
     @objc private func joystickHold(gesture: UIGestureRecognizer) {
@@ -120,9 +120,12 @@ extension JoystickViewController {
         self.hideAnimation()
     }
     
-    private func hideAnimation() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut) {
-            self.buttonsHV.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+    private func checkForSelectedButtons() {
+        let buttons:[MoveButton] = [self.previousButton, self.nextButton]
+        buttons.forEach { button in
+            if button.isSelected {
+                button.type == .forward ? self.moveToRight() : self.moveToLeft()
+            }
         }
     }
     
@@ -135,18 +138,15 @@ extension JoystickViewController {
         }, completion: completion)
     }
     
+    private func hideAnimation() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut) {
+            self.buttonsHV.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        }
+    }
+    
     private func selectTheButton(button: MoveButton) {
         self.makeWeakVibration()
         button.setSelected()
-    }
-    
-    private func checkForSelectedButtons() {
-        let buttons:[MoveButton] = [self.previousButton, self.nextButton]
-        buttons.forEach { button in
-            if button.isSelected {
-                button.type == .forward ? self.moveToRight() : self.moveToLeft()
-            }
-        }
     }
     
     private func moveToLeft() {
