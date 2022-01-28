@@ -89,6 +89,7 @@ extension MainViewController {
     }
     
     @objc private func startButtonPressed() {
-        // TODO: Open scan view
+        let vc = JoystickVCFactory.make()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

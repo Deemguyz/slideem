@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA34442C27A449AC002960A7 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34442B27A449AC002960A7 /* JoystickViewController.swift */; };
+		FA34442D27A449AC002960A7 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34442B27A449AC002960A7 /* JoystickViewController.swift */; };
+		FA34442E27A449AC002960A7 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34442B27A449AC002960A7 /* JoystickViewController.swift */; };
+		FA34443027A449BA002960A7 /* JoystickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34442F27A449BA002960A7 /* JoystickViewModel.swift */; };
+		FA34443127A449BA002960A7 /* JoystickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34442F27A449BA002960A7 /* JoystickViewModel.swift */; };
+		FA34443227A449BA002960A7 /* JoystickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34442F27A449BA002960A7 /* JoystickViewModel.swift */; };
+		FA34443427A449C2002960A7 /* JoystickVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34443327A449C2002960A7 /* JoystickVCFactory.swift */; };
+		FA34443527A449C2002960A7 /* JoystickVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34443327A449C2002960A7 /* JoystickVCFactory.swift */; };
+		FA34443627A449C2002960A7 /* JoystickVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34443327A449C2002960A7 /* JoystickVCFactory.swift */; };
+		FA34443827A44ABA002960A7 /* DeemMoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34443727A44ABA002960A7 /* DeemMoveButton.swift */; };
+		FA34443927A44ABA002960A7 /* DeemMoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34443727A44ABA002960A7 /* DeemMoveButton.swift */; };
+		FA34443A27A44ABA002960A7 /* DeemMoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34443727A44ABA002960A7 /* DeemMoveButton.swift */; };
+		FA34443C27A44B0B002960A7 /* DeemVibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34443B27A44B0B002960A7 /* DeemVibration.swift */; };
 		FA6A2FB32779ED47001414BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A2FB22779ED47001414BA /* AppDelegate.swift */; };
 		FA6A2FB52779ED47001414BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A2FB42779ED47001414BA /* SceneDelegate.swift */; };
 		FA6A2FB72779ED47001414BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A2FB62779ED47001414BA /* ViewController.swift */; };
@@ -50,6 +63,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA34442B27A449AC002960A7 /* JoystickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
+		FA34442F27A449BA002960A7 /* JoystickViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickViewModel.swift; sourceTree = "<group>"; };
+		FA34443327A449C2002960A7 /* JoystickVCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickVCFactory.swift; sourceTree = "<group>"; };
+		FA34443727A44ABA002960A7 /* DeemMoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeemMoveButton.swift; sourceTree = "<group>"; };
+		FA34443B27A44B0B002960A7 /* DeemVibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeemVibration.swift; sourceTree = "<group>"; };
 		FA6A2FAF2779ED47001414BA /* Slideem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slideem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6A2FB22779ED47001414BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6A2FB42779ED47001414BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +124,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA34442A27A44977002960A7 /* Joystick */ = {
+			isa = PBXGroup;
+			children = (
+				FA34442B27A449AC002960A7 /* JoystickViewController.swift */,
+				FA34442F27A449BA002960A7 /* JoystickViewModel.swift */,
+				FA34443327A449C2002960A7 /* JoystickVCFactory.swift */,
+			);
+			path = Joystick;
+			sourceTree = "<group>";
+		};
 		FA6A2FA62779ED47001414BA = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +230,7 @@
 		FA9CE4C7277E0811002ECD36 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				FA34442A27A44977002960A7 /* Joystick */,
 				FAF48493279412FA005DF758 /* HelpPage */,
 				FA9CE4C6277E080A002ECD36 /* Main */,
 			);
@@ -220,6 +249,7 @@
 		FA9CE4E0277E08D8002ECD36 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FA34443B27A44B0B002960A7 /* DeemVibration.swift */,
 				FA9CE4D8277E08D5002ECD36 /* VC.swift */,
 			);
 			path = Extension;
@@ -239,6 +269,7 @@
 				FA7D23AC277E0B6B0075113F /* DeemImageView.swift */,
 				FA7D23BD277E0C6D0075113F /* DeemRectangularButton.swift */,
 				FAF48499279413C8005DF758 /* DeemLabel.swift */,
+				FA34443727A44ABA002960A7 /* DeemMoveButton.swift */,
 			);
 			path = UIKitViews;
 			sourceTree = "<group>";
@@ -388,6 +419,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA34443827A44ABA002960A7 /* DeemMoveButton.swift in Sources */,
+				FA34443C27A44B0B002960A7 /* DeemVibration.swift in Sources */,
 				FAA382ED2796FA2B00A959AB /* DeemNavBar.swift in Sources */,
 				FAF484952794130D005DF758 /* HelpPageViewController.swift in Sources */,
 				FA9CE4D3277E0835002ECD36 /* MainVCFactory.swift in Sources */,
@@ -403,8 +436,11 @@
 				FA7D23B6277E0C1A0075113F /* Images.swift in Sources */,
 				FAA382F32797000600A959AB /* DeviceHelper.swift in Sources */,
 				FA9CE4D9277E08D5002ECD36 /* VC.swift in Sources */,
+				FA34443427A449C2002960A7 /* JoystickVCFactory.swift in Sources */,
 				FA7D23D3277E111E0075113F /* Strings.swift in Sources */,
+				FA34442C27A449AC002960A7 /* JoystickViewController.swift in Sources */,
 				FA7D23AD277E0B6B0075113F /* DeemImageView.swift in Sources */,
+				FA34443027A449BA002960A7 /* JoystickViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +448,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA34443127A449BA002960A7 /* JoystickViewModel.swift in Sources */,
+				FA34442D27A449AC002960A7 /* JoystickViewController.swift in Sources */,
+				FA34443927A44ABA002960A7 /* DeemMoveButton.swift in Sources */,
 				FA6A2FCA2779ED51001414BA /* SlideemTests.swift in Sources */,
+				FA34443527A449C2002960A7 /* JoystickVCFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +460,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA34443227A449BA002960A7 /* JoystickViewModel.swift in Sources */,
+				FA34442E27A449AC002960A7 /* JoystickViewController.swift in Sources */,
+				FA34443A27A44ABA002960A7 /* DeemMoveButton.swift in Sources */,
 				FA6A2FD52779ED52001414BA /* SlideemUITests.swift in Sources */,
+				FA34443627A449C2002960A7 /* JoystickVCFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +561,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -571,6 +616,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

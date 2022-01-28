@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
 
 extension UIViewController {
     public func setWhiteBackground() {
@@ -43,5 +44,11 @@ extension UIViewController {
             if view is DeemNavBar { return DeemDeviceSizes.safeAreaTop + 50 }
         }
         return DeemDeviceSizes.safeAreaTop
+    }
+}
+
+extension UIViewController {
+    public func makeWeakVibration() {
+        AudioServicesPlaySystemSound(1519)
     }
 }
