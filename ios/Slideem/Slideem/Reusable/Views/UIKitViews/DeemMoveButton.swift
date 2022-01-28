@@ -68,7 +68,17 @@ final class JoystickCenterButton: UIButton {
     }
     
     private func setViews() {
-        self.backgroundColor = .black
+        self.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
         self.setTitle("0", for: .normal)
+        self.titleLabel?.font = .systemFont(ofSize: 80)
+        self.titleLabel?.textColor = #colorLiteral(red: 0.5882352941, green: 0.6549019608, blue: 0.6862745098, alpha: 1)
+    }
+    
+    private func setShadow() {
+        self.layer.borderColor = #colorLiteral(red: 0.1019607843, green: 0.1490196078, blue: 0.1725490196, alpha: 1)
+        self.layer.shadowOffset = .zero
+        self.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.layer.masksToBounds = false
+        self.layer.shadowOpacity = 0.6
     }
 }

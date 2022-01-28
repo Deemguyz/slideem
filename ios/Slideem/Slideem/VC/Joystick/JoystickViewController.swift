@@ -35,28 +35,41 @@ class JoystickViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setViews()
         self.createJoystick()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.hideAnimation()
     }
     
     // MARK: - UI Layout
     
     private func setViews() {
-        self.view.backgroundColor = .white
-            
+        self.view.backgroundColor = #colorLiteral(red: 0.1333333333, green: 0.2039215686, blue: 0.2352941176, alpha: 1)
+        
+        self.createHVButtons()
+        
+        self.view.addSubview(self.buttonsHV)
+        buttonsHV.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
+        
         self.view.addSubview(centerButton)
         centerButton.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.width.height.equalTo(160)
         }
-        
-        self.createHVButtons()
     }
     
     private func createHVButtons() {
         let views: [UIView] = [self.previousButton, self.nextButton]
         self.buttonsHV = UIStackView(arrangedSubviews: views)
-        self.buttonsHV.frame = CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 50)
+//        self.buttonsHV.frame = CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 50)
         self.buttonsHV.axis = .horizontal
         self.buttonsHV.distribution = .equalSpacing
     }
@@ -84,15 +97,9 @@ extension JoystickViewController {
     
     private func showMoveButtons() {
         self.makeWeakVibration()
-        self.view.addSubview(buttonsHV)
-        let centerX = (self.view.frame.width - self.buttonsHV.frame.width) / 2
-        buttonsHV.transform = CGAffineTransform(translationX: centerX, y: self.centerButton.frame.minY)
-        
-        //for animation
-        buttonsHV.alpha = 0.0
+    
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut) {
-            self.buttonsHV.alpha = 1
-            self.centerButton.backgroundColor = .lightGray
+            self.buttonsHV.transform = .identity
         }
     }
     
@@ -109,9 +116,13 @@ extension JoystickViewController {
     
     private func hideMoveButtons() {
         self.checkForSelectedButtons()
-        self.unselectAllButtons { [unowned self] (_) in
-            self.buttonsHV.removeFromSuperview()
-            self.centerButton.backgroundColor = .black
+        self.unselectAllButtons()
+        self.hideAnimation()
+    }
+    
+    private func hideAnimation() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut) {
+            self.buttonsHV.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         }
     }
     
