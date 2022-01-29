@@ -84,7 +84,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController {
     @objc private func helpButtonPressed() {
-        // TODO: Open help view
+        let vc = HelpPageVCFactory.make()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func startButtonPressed() {
