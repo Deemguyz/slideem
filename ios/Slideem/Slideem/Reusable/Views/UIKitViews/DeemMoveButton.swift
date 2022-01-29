@@ -28,12 +28,20 @@ final class MoveButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        UIView.animate(withDuration: 1.0) {
+            self.layer.cornerRadius = self.frame.width / 2
+        }
+    }
+    
     // MARK: - Setting the view
     
     private func setViews(title: String) {
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 30)
         self.setTitleColor(.white, for: .normal)
+        self.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
     }
     
     // MARK: - selection/unselection
