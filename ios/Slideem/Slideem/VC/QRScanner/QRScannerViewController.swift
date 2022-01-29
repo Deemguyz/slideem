@@ -42,6 +42,7 @@ class QRScannerViewController: UIViewController {
         
         self.configureCamera()
         self.setQRCodeFrame()
+        self.setDelegates()
     }
     
     private func setDelegates() {
@@ -84,12 +85,11 @@ class QRScannerViewController: UIViewController {
     }
     
     private func setQRCodeFrame() {
-            qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
             qrCodeFrameView.layer.borderWidth = 2
             qrCodeFrameView.layer.masksToBounds = false
             self.view.addSubview(qrCodeFrameView)
             self.view.bringSubviewToFront(qrCodeFrameView)
-        
+            qrCodeFrameView.frame = self.view.frame
     }
 }
 
@@ -97,7 +97,7 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects.count == 0 {
-            qrCodeFrameView.frame = CGRect.zero
+            self.removeQRBox()
             let message = "No QR code is detected"
             print("qr value is: \(message)")
             return
@@ -109,12 +109,30 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView.frame = barCodeObject!.bounds
-
+            self.setQRBox(to: barCodeObject!.bounds)
             if metadataObj.stringValue != nil {
                 let qrValue = metadataObj.stringValue
+                self.viewModel.gotQRCode(code: qrValue)
                 print("qr value is: \(qrValue)")
             }
+        }
+    }
+    private func setQRBox(to boxFrame: CGRect) {
+        
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .curveEaseOut) { [weak self] in
+            self?.qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+            self?.qrCodeFrameView.frame = boxFrame
+        } completion: { _ in
+            
+        }
+
+    }
+    
+    private func removeQRBox() {
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .curveEaseOut) { [weak self] in
+            self?.qrCodeFrameView.frame = (self?.view.frame)!
+            self?.qrCodeFrameView.layer.borderColor = UIColor.clear.cgColor
+        } completion: { _ in
         }
     }
 }
@@ -122,6 +140,10 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 extension QRScannerViewController: QRScannerViewModelDelegate {
     func moveToJoystick() {
         // TODO: add navigating to joystick module
-        
+        self.makeWeakVibration()
+        let vc = JoystickVCFactory.make()
+//        self.dismiss(animated: true) { [weak self] in
+//            self?.navigationController?.pushViewController(vc, animated: true)
+//        }
     }
 }
