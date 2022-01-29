@@ -15,7 +15,7 @@ class QRScannerViewController: UIViewController {
     
     private var captureSession: AVCaptureSession
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    private var qrCodeFrameView: UIView?
+    private var qrCodeFrameView = UIView()
 
     private let viewModel: QRScannerViewModel
     
@@ -84,12 +84,12 @@ class QRScannerViewController: UIViewController {
     }
     
     private func setQRCodeFrame() {
-        if let qrCodeFrameView = qrCodeFrameView {
             qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
             qrCodeFrameView.layer.borderWidth = 2
+            qrCodeFrameView.layer.masksToBounds = false
             self.view.addSubview(qrCodeFrameView)
             self.view.bringSubviewToFront(qrCodeFrameView)
-        }
+        
     }
 }
 
@@ -97,7 +97,7 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = CGRect.zero
+            qrCodeFrameView.frame = CGRect.zero
             let message = "No QR code is detected"
             print("qr value is: \(message)")
             return
@@ -109,7 +109,7 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView?.frame = barCodeObject!.bounds
+            qrCodeFrameView.frame = barCodeObject!.bounds
 
             if metadataObj.stringValue != nil {
                 let qrValue = metadataObj.stringValue
