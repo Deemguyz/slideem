@@ -43,6 +43,7 @@ class JoystickViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.animateMoveButtons()
         self.hideAnimation()
     }
     
@@ -70,6 +71,10 @@ class JoystickViewController: UIViewController {
     
     private func createHVButtons() {
         let views: [UIView] = [self.previousButton, self.nextButton]
+        views.forEach { button in
+            button.snp.makeConstraints { $0.width.height.equalTo(60) }
+        }
+        
         self.buttonsHV = UIStackView(arrangedSubviews: views)
         self.buttonsHV.axis = .horizontal
         self.buttonsHV.distribution = .equalSpacing
@@ -77,6 +82,14 @@ class JoystickViewController: UIViewController {
     
     private func createJoystick() {
         self.centerButton.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(joystickHold)))
+    }
+    
+    private func animateMoveButtons() {
+        let buttons: [UIView] = [self.previousButton, self.nextButton]
+        
+        buttons.forEach { button in
+            button.layoutSubviews()
+        }
     }
 }
 
@@ -107,12 +120,14 @@ extension JoystickViewController {
     
     private func userMovedFinger(to location: CGPoint) {
         let hitTest = self.buttonsHV.hitTest(location, with: nil)
-        self.unselectAllButtons()
         if let selectedButton = hitTest as? MoveButton  {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut) {
-                self.makeWeakVibration()
-                selectedButton.isSelected ? () : self.selectTheButton(button: selectedButton)
+            UIView.animate(withDuration: 0.5) {
+                selectedButton.isSelected
+                ? ()
+                : self.selectTheButton(button: selectedButton)
             }
+        } else {
+            self.unselectAllButtons()
         }
     }
     
