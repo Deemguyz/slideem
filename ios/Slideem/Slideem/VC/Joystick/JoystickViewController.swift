@@ -107,12 +107,14 @@ extension JoystickViewController {
     
     private func userMovedFinger(to location: CGPoint) {
         let hitTest = self.buttonsHV.hitTest(location, with: nil)
-        self.unselectAllButtons()
         if let selectedButton = hitTest as? MoveButton  {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut) {
-                self.makeWeakVibration()
-                selectedButton.isSelected ? () : self.selectTheButton(button: selectedButton)
+            UIView.animate(withDuration: 0.5) {
+                selectedButton.isSelected
+                ? ()
+                : self.selectTheButton(button: selectedButton)
             }
+        } else {
+            self.unselectAllButtons()
         }
     }
     
